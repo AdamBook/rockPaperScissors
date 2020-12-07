@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+  <script>
+  
+   /* function lastLetter (letters) {
+
+        let lastPart = letters.slice(-1);
+        return lastPart;
+    }
+  */
+    function computerPlay(){
+        let computerOptions = ["Rock","Paper","Scissors"];
+        let computerChoice = Math.floor(Math.random()*computerOptions.length);
+
+        return computerOptions[computerChoice];        
+    }
+  </script>
+</body>
+</html>
