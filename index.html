@@ -8,12 +8,47 @@
 
   <script>
   
+  // Computer's choice is determined and returned
     function computerPlay(){
-        let computerOptions = ["Rock","Paper","Scissors"];
+        let computerOptions = ["ROCK","PAPER","SCISSORS"];
         let computerChoice = Math.floor(Math.random()*computerOptions.length);
 
         return computerOptions[computerChoice];        
     }
+
+    function playRound(playerSelection, computerSelection){
+      
+      playerSelection = playerSelection.toUpperCase();
+      
+      if (playerSelection==computerSelection)
+        return "You made the same choice as the computer. Draw!";
+      else if (playerSelection=="ROCK" && computerSelection=="PAPER")
+        return "You Lose! Paper beats Rock";
+      else if (playerSelection=="ROCK" && computerSelection=="SCISSORS")
+        return "You Win! Rock beats Scissors";
+      else if (playerSelection=="PAPER" && computerSelection=="ROCK")
+        return "You Win! Paper beats Rock";
+      else if (playerSelection=="PAPER" && computerSelection=="SCISSORS")
+        return "You Lose! Scissors beats Paper";
+      else if (playerSelection=="SCISSORS" && computerSelection=="PAPER")
+        return "You Win! Scissors beats Paper";
+      else if (playerSelection=="SCISSORS" && computerSelection=="ROCK")
+        return "You Lose! Rock beats Scissors";
+      else
+        return "Invalid selection - choose ROCK, PAPER, or SCISSORS."
+    }
+
+    function game(){
+    
+      let playerSelect = window.prompt("Rock, Paper or Scissors?");
+      console.log(playRound(playerSelect, computerPlay()));
+      
+
+      return "test1";      
+    }
+  
+
+
   </script>
 </body>
 </html>
