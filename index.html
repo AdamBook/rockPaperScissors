@@ -17,9 +17,9 @@
 
       return computerOptions[computerChoice];
     }
-
+    //Play 1 round and report winner of that round
     function playRound(playerSelection, computerSelection) {
-
+      //Ensuring player input is case insensitive
       playerSelection = playerSelection.toUpperCase();
 
       if (playerSelection == computerSelection) {
@@ -56,11 +56,17 @@
 
     function game() {
 
-      
+      //Reset scores for a new game
       let playerScore = 0;
       let computerScore = 0;
+      //winner keeps track of who wins the 5 rounds
+      let winner = "No determined winner";
+
+      //Initiate round count for the for loop
       let numberOfRounds;
 
+
+      //Play 5 rounds and add 1 point per round to the winner and report round winner's score
       for (numberOfRounds = 0; numberOfRounds < 5; numberOfRounds++) {
         let playerSelect = window.prompt("Rock, Paper or Scissors?");
         let roundWinner = playRound(playerSelect, computerPlay());
@@ -74,7 +80,17 @@
         }
       }
 
-      return "test1";
+      //Determine overall winner
+      if (playerScore > computerScore)
+        winner = "Player wins the game!";
+      else if (playerScore < computerScore)
+        winner = "Computer wins the game!";
+      else if (playerScore == computerScore)
+        winner = "The game is a draw!"
+      else winner = "Something went wrong!"
+
+      //Return overall winner in text message
+      return winner;
     }
 
 
