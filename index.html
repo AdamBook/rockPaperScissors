@@ -30,25 +30,49 @@
         console.log("You Lose! Paper beats Rock")
         return "Computer wins";
       }
-      else if (playerSelection == "ROCK" && computerSelection == "SCISSORS")
-        return "You Win! Rock beats Scissors";
-      else if (playerSelection == "PAPER" && computerSelection == "ROCK")
-        return "You Win! Paper beats Rock";
-      else if (playerSelection == "PAPER" && computerSelection == "SCISSORS")
-        return "You Lose! Scissors beats Paper";
-      else if (playerSelection == "SCISSORS" && computerSelection == "PAPER")
-        return "You Win! Scissors beats Paper";
-      else if (playerSelection == "SCISSORS" && computerSelection == "ROCK")
-        return "You Lose! Rock beats Scissors";
+      else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
+        console.log("You Win! Rock beats Scissors");
+        return "Player wins";
+      }
+      else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
+        console.log("You Win! Paper beats Rock");
+        return "Player wins";
+      }
+      else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
+        console.log("You Lose! Scissors beats Paper");
+        return "Computer wins";
+      }
+      else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
+        console.log("You Win! Scissors beats Paper");
+        return "Player wins";
+      }
+      else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
+        console.log("You Lose! Rock beats Scissors");
+        return "Computer wins";
+      }
       else
-        return "Invalid selection - choose ROCK, PAPER, or SCISSORS."
+        console.log("Invalid selection - choose ROCK, PAPER, or SCISSORS.");
     }
 
     function game() {
 
-      let playerSelect = window.prompt("Rock, Paper or Scissors?");
-      console.log(playRound(playerSelect, computerPlay()));
+      
+      let playerScore = 0;
+      let computerScore = 0;
+      let numberOfRounds;
 
+      for (numberOfRounds = 0; numberOfRounds < 5; numberOfRounds++) {
+        let playerSelect = window.prompt("Rock, Paper or Scissors?");
+        let roundWinner = playRound(playerSelect, computerPlay());
+        if (roundWinner == "Computer wins") {
+          computerScore++;
+          console.log("Computer score is: " + computerScore);
+        }
+        else if (roundWinner == "Player wins") {
+          playerScore++;
+          console.log("Player score is: " + playerScore);
+        }
+      }
 
       return "test1";
     }
