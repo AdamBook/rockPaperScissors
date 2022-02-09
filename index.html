@@ -8,7 +8,32 @@
 
 <body>
 
+  <button id="rockButton">Rock</button>
+    <button id="paperButton">Paper</button>
+      <button id="scissorsButton">Scissors</button>
+
+
+
+
   <script>
+
+    //Create buttons in script file
+    const rockButton = document.querySelector('#rockButton');
+    const paperButton = document.querySelector('#paperButton');
+    const scissorsButton = document.querySelector('#scissorsButton');
+
+   //Adding listeners to all buttons
+
+   const buttons = document.querySelectorAll('button');
+   buttons.forEach((button) => {
+
+      button.addEventListener('click', function (e) {
+        console.log(e);
+      });
+
+   })
+
+
 
     // Computer's choice is determined and returned
     function computerPlay() {
