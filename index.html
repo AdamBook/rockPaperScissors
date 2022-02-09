@@ -112,7 +112,7 @@ let numberOfRounds;
         computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore);
         playerResult.textContent = playerScore;
-        return "Draw";
+       // return "Draw";
       }
       else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
         console.log("You Lose! Paper beats Rock");
@@ -122,7 +122,7 @@ let numberOfRounds;
         computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore);
         playerResult.textContent = playerScore;
-        return "Computer wins";
+       // return "Computer wins";
       }
       else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
         console.log("You Win! Rock beats Scissors");
@@ -132,7 +132,7 @@ let numberOfRounds;
         computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore);
         playerResult.textContent = playerScore;
-        return "Player wins";
+       // return "Player wins";
       }
       else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
         console.log("You Win! Paper beats Rock");
@@ -142,7 +142,7 @@ let numberOfRounds;
         computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore);
         playerResult.textContent = playerScore;
-        return "Player wins";
+      //  return "Player wins";
       }
       else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
         console.log("You Lose! Scissors beats Paper");
@@ -152,7 +152,7 @@ let numberOfRounds;
         computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore);
         playerResult.textContent = playerScore;
-        return "Computer wins";
+       // return "Computer wins";
       }
       else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
         console.log("You Win! Scissors beats Paper");
@@ -162,7 +162,7 @@ let numberOfRounds;
         computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore);
         playerResult.textContent = playerScore;
-        return "Player wins";
+       // return "Player wins";
       }
       else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
         console.log("You Lose! Rock beats Scissors");
@@ -172,11 +172,21 @@ let numberOfRounds;
         computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore);
         playerResult.textContent = playerScore;
-        return "Computer wins";
+       // return "Computer wins";
       }
       else
         console.log("Invalid selection - choose ROCK, PAPER, or SCISSORS.");
+
+      if (playerScore>4){
+        alert('You have 5 points, you win!');
+      }
+      if (computerScore>4){
+        alert('Computer has 5 points, computer wins!');
+      }
+
+
     }
+      
 
     
 
