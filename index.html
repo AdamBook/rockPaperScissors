@@ -21,16 +21,19 @@
     const rockButton = document.querySelector('#rockButton');
     rockButton.addEventListener('click', function (e) {
         console.log(e);
+        playRound("ROCK", computerPlay());
       });
 
     const paperButton = document.querySelector('#paperButton');
     paperButton.addEventListener('click', function (e) {
         console.log(e);
+        playRound("PAPER", computerPlay());
       });
 
     const scissorsButton = document.querySelector('#scissorsButton');
     scissorsButton.addEventListener('click', function (e) {
         console.log(e);
+        playRound("SCISSORS", computerPlay());
       });
  
 
