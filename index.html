@@ -17,11 +17,13 @@
 <div id=gameResult>
   <div id=roundResult></div>
   </div>
+  Computer score:   
+  <div id=computerResult></div>
+  <br>
   Your score: 
   <div id=playerResult></div>
   <br>
-  Computer score:   
-  <div id=computerResult></div>
+  
 </div>
 
 
@@ -104,49 +106,63 @@ let numberOfRounds;
       if (playerSelection == computerSelection) {
         console.log("You made the same choice as the computer. Draw!")
         console.log("Computer score is: "+computerScore)
+        computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore)
+        playerResult.textContent = playerScore;
         return "Draw";
       }
       else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
         console.log("You Lose! Paper beats Rock")
         computerScore++;
         console.log("Computer score is: "+computerScore)
+        computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore)
+        playerResult.textContent = playerScore;
         return "Computer wins";
       }
       else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
         console.log("You Win! Rock beats Scissors");
         playerScore++;
         console.log("Computer score is: "+computerScore)
+        computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore)
+        playerResult.textContent = playerScore;
         return "Player wins";
       }
       else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
         console.log("You Win! Paper beats Rock");
         playerScore++;
         console.log("Computer score is: "+computerScore)
+        computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore)
+        playerResult.textContent = playerScore;
         return "Player wins";
       }
       else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
         console.log("You Lose! Scissors beats Paper");
         computerScore++;
         console.log("Computer score is: "+computerScore)
+        computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore)
+        playerResult.textContent = playerScore;
         return "Computer wins";
       }
       else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
         console.log("You Win! Scissors beats Paper");
         playerScore++;
         console.log("Computer score is: "+computerScore)
+        computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore)
+        playerResult.textContent = playerScore;
         return "Player wins";
       }
       else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
         console.log("You Lose! Rock beats Scissors");
         computerScore++;
         console.log("Computer score is: "+computerScore)
+        computerResult.textContent = computerScore;
         console.log("Player score is: " +playerScore)
+        playerResult.textContent = playerScore;
         return "Computer wins";
       }
       else
