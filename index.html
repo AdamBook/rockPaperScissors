@@ -19,19 +19,20 @@
 
     //Create buttons in script file
     const rockButton = document.querySelector('#rockButton');
-    const paperButton = document.querySelector('#paperButton');
-    const scissorsButton = document.querySelector('#scissorsButton');
-
-   //Adding listeners to all buttons
-
-   const buttons = document.querySelectorAll('button');
-   buttons.forEach((button) => {
-
-      button.addEventListener('click', function (e) {
+    rockButton.addEventListener('click', function (e) {
         console.log(e);
       });
 
-   })
+    const paperButton = document.querySelector('#paperButton');
+    paperButton.addEventListener('click', function (e) {
+        console.log(e);
+      });
+
+    const scissorsButton = document.querySelector('#scissorsButton');
+    scissorsButton.addEventListener('click', function (e) {
+        console.log(e);
+      });
+ 
 
 
 
@@ -118,7 +119,7 @@
       return winner;
     }
 
-
+   
 
   </script>
 </body>
