@@ -12,7 +12,17 @@
     <button id="paperButton">Paper</button>
       <button id="scissorsButton">Scissors</button>
 
-
+      <br>
+      <br>
+<div id=gameResult>
+  <div id=roundResult></div>
+  </div>
+  Your score: 
+  <div id=playerResult></div>
+  <br>
+  Computer score:   
+  <div id=computerResult></div>
+</div>
 
 
   <script>
@@ -36,6 +46,46 @@
         playRound("SCISSORS", computerPlay());
       });
  
+//--------------Game function started here-------------
+
+//Reset scores for a new game
+let playerScore = 0;
+let computerScore = 0;
+//winner keeps track of who wins the 5 rounds
+let winner = "No determined winner";
+
+//Initiate round count for the for loop
+let numberOfRounds;
+
+
+//  // Play 5 rounds and add 1 point per round to the winner and report round winner's score
+// for (numberOfRounds = 0; numberOfRounds < 5; numberOfRounds++) {
+//   let playerSelect = window.prompt("Rock, Paper or Scissors?");
+//   let roundWinner = playRound(playerSelect, computerPlay());
+//   if (roundWinner == "Computer wins") {
+//     computerScore++;
+//     console.log("Computer score is: " + computerScore);
+//   }
+//   else if (roundWinner == "Player wins") {
+//     playerScore++;
+//     console.log("Player score is: " + playerScore);
+//   }
+// }
+
+//------------------Determine overall winner-------------------
+
+// if (playerScore > computerScore)
+//   winner = "Player wins the game!";
+// else if (playerScore < computerScore)
+//   winner = "Computer wins the game!";
+// else if (playerScore == computerScore)
+//   winner = "The game is a draw!"
+// else winner = "Something went wrong!"
+
+//   //Return overall winner in text message
+// return winner;
+
+//----------------Game function ended here---------------------
 
 
 
@@ -53,74 +103,57 @@
 
       if (playerSelection == computerSelection) {
         console.log("You made the same choice as the computer. Draw!")
+        console.log("Computer score is: "+computerScore)
+        console.log("Player score is: " +playerScore)
         return "Draw";
       }
       else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
         console.log("You Lose! Paper beats Rock")
+        computerScore++;
+        console.log("Computer score is: "+computerScore)
+        console.log("Player score is: " +playerScore)
         return "Computer wins";
       }
       else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
         console.log("You Win! Rock beats Scissors");
+        playerScore++;
+        console.log("Computer score is: "+computerScore)
+        console.log("Player score is: " +playerScore)
         return "Player wins";
       }
       else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
         console.log("You Win! Paper beats Rock");
+        playerScore++;
+        console.log("Computer score is: "+computerScore)
+        console.log("Player score is: " +playerScore)
         return "Player wins";
       }
       else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
         console.log("You Lose! Scissors beats Paper");
+        computerScore++;
+        console.log("Computer score is: "+computerScore)
+        console.log("Player score is: " +playerScore)
         return "Computer wins";
       }
       else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
         console.log("You Win! Scissors beats Paper");
+        playerScore++;
+        console.log("Computer score is: "+computerScore)
+        console.log("Player score is: " +playerScore)
         return "Player wins";
       }
       else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
         console.log("You Lose! Rock beats Scissors");
+        computerScore++;
+        console.log("Computer score is: "+computerScore)
+        console.log("Player score is: " +playerScore)
         return "Computer wins";
       }
       else
         console.log("Invalid selection - choose ROCK, PAPER, or SCISSORS.");
     }
 
-    function game() {
-
-      //Reset scores for a new game
-      let playerScore = 0;
-      let computerScore = 0;
-      //winner keeps track of who wins the 5 rounds
-      let winner = "No determined winner";
-
-      //Initiate round count for the for loop
-      let numberOfRounds;
-
-
-      //Play 5 rounds and add 1 point per round to the winner and report round winner's score
-      for (numberOfRounds = 0; numberOfRounds < 5; numberOfRounds++) {
-        let playerSelect = window.prompt("Rock, Paper or Scissors?");
-        let roundWinner = playRound(playerSelect, computerPlay());
-        if (roundWinner == "Computer wins") {
-          computerScore++;
-          console.log("Computer score is: " + computerScore);
-        }
-        else if (roundWinner == "Player wins") {
-          playerScore++;
-          console.log("Player score is: " + playerScore);
-        }
-      }
-
-      //Determine overall winner
-      if (playerScore > computerScore)
-        winner = "Player wins the game!";
-      else if (playerScore < computerScore)
-        winner = "Computer wins the game!";
-      else if (playerScore == computerScore)
-        winner = "The game is a draw!"
-      else winner = "Something went wrong!"
-
-      //Return overall winner in text message
-      return winner;
-    }
+    
 
    
 
